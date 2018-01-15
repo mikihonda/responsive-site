@@ -41,7 +41,7 @@ body{
 header {
     .image {
         background-image: url("../images/kadai_image.jpg");
-        height: 500px;
+        height: 250px;
         width: 100%;
         background-size: cover;
         background-position: center center;
@@ -109,6 +109,16 @@ footer {
 
 // PC
 @media (min-width: 769px) {
+    //Header
+    header {
+        .image {
+            background-image: url("../images/kadai_image.jpg");
+            height: 500px;
+            width: 100%;
+            background-size: cover;
+            background-position: center center;
+        }
+    }
     // Contents
     #contents {
         .container {
