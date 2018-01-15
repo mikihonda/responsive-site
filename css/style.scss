@@ -1,0 +1,122 @@
+@import "compass";
+
+// font-family
+$baseFontFamily :"游ゴシック", YuGothic, "メイリオ",Verdana, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
+// colors
+$baseColor: #ffffff; // 白
+$subColor: #dddddd; // 薄グレー
+$keyColor: #9a9a9a; // 濃グレー
+$fontColor: #9a9a9a;
+
+/* Base
+------------------------------------------------------------*/
+html{ font-size: 62.5%; }
+
+body{
+    color: $fontColor;
+    font-size: 1.4rem;
+    font-family:$baseFontFamily;
+    line-height:1.6;
+    letter-spacing: 0.1em;
+    background-color: $baseColor;
+}
+
+/* Align
+------------------------------------------------------------*/
+.text-center {
+    text-align: center;
+}
+
+/* Layout
+------------------------------------------------------------*/
+.block-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Header
+------------------------------------------------------------*/
+header {
+    .image {
+        background-image: url("../images/kadai_image.jpg");
+        height: 500px;
+        width: 100%;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+/* Contents	
+------------------------------------------------------------*/
+// Common Styles
+section {
+    padding: 60px 0;
+    .container {
+        width: 90%;
+        @extend .block-center;
+    }
+    h2 {
+        font-size: 3.2rem;
+    }
+}
+// Contents
+#contents {
+    .container {
+        @include display-flex;
+        justify-content: space-between; // boxを均等に配置
+        @include flex-direction(column); // 縦に並べる
+    }
+    .content-box {
+        @include flex(1);
+        margin: 10px 0;
+        background-color: $keyColor;
+        @include box-sizing(border-box);
+        .title {
+            border-bottom: solid 1px;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            background-color: $subColor;
+        }
+        .text {
+            color: $baseColor;
+            text-align: center;
+            padding: 20px;
+        }
+    }
+}
+
+/* Footer
+------------------------------------------------------------*/
+footer {
+    background-color: $subColor;
+    padding: 20px 0 30px;
+    color: #fontColor;
+    font-weight: bold;
+    .button-square {
+        background-color: $keyColor;
+        width: 170px;
+        height: 25px;
+        color: $baseColor;
+        text-align: center;
+        display: block;
+        @include border-radius(4px);
+        @extend .block-center;
+    }
+}
+
+// PC
+@media (min-width: 769px) {
+    // Contents
+    #contents {
+        .container {
+            @include flex-direction(row);
+            justify-content: space-between;
+        }
+        .content-box {
+            margin: 0 10px;
+        }
+    }
+}
